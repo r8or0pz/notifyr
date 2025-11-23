@@ -1,4 +1,5 @@
 import os
+import time
 import requests
 import google.generativeai as genai
 
@@ -25,19 +26,29 @@ Do NOT include any introductory or concluding remarks. Just the formatted tip.
 """
 
 # --- Execution ---
-try:
-    print("Generating content from Gemini...")
-    response = model.generate_content(prompt)
-    tip_text = response.text
-except Exception as e:
-    tip_text = f"Content Generation Error: {e}"
-    print(tip_text)
+max_retries = 3
+retry_delay = 5
+
+for attempt in range(max_retries):
+    try:
+        print(f"Generating content from Gemini (Attempt {attempt + 1}/{max_retries})...")
+        response = model.generate_content(prompt)
+        tip_text = response.text
+        break
+    except Exception as e:
+        print(f"Error on attempt {attempt + 1}: {e}")
+        if attempt < max_retries - 1:
+            print(f"Retrying in {retry_delay} seconds...")
+            time.sleep(retry_delay)
+        else:
+            tip_text = f"Content Generation Error after {max_retries} attempts: {e}"
+            print(tip_text)
 
 # Send to ntfy.sh
 try:
     print(f"Sending notification to ntfy.sh/{topic}...")
     requests.post(
-        f"https://ntfy.sh/{topic}", 
+        f"https://ntfy.sh/{topic}",
         data=tip_text.encode('utf-8'),
         headers={
             "Title": "🔒 CI/CD Security Tip",
