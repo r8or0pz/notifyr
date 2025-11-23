@@ -5,12 +5,8 @@ import google.generativeai as genai
 # --- Configuration ---
 # NOTE: Ensure GEMINI_API_KEY is set as an environment variable (e.g., in GitHub Secrets)
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel('gemini-2.5-flash')
-
-# --- Your Daily Notification Topic ---
-# REMINDER: Change 'devops_daily_secret_777' to your actual ntfy.sh topic!
-topic = "devops_daily_secret_777" 
-# -------------------------------------
+model = genai.GenerativeModel(os.environ['GENERATIVE_MODEL'])
+topic = os.environ["NOTIFICATION_TOPIC"]
 
 prompt = """
 You are a highly opinionated, expert-level Senior DevOps/SRE Engineer.
