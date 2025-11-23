@@ -8,6 +8,7 @@ import google.generativeai as genai
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 model = genai.GenerativeModel(os.environ['GENERATIVE_MODEL'])
 topic = os.environ["NOTIFICATION_TOPIC"]
+notification_title = os.environ.get("NOTIFICATION_TITLE", "🔒 DevOps/SRE Tip")
 
 prompt = """
 You are a highly opinionated, expert-level Senior DevOps/SRE Engineer.
@@ -51,7 +52,7 @@ try:
         f"https://ntfy.sh/{topic}",
         data=tip_text.encode('utf-8'),
         headers={
-            "Title": "🔒 CI/CD Security Tip".encode('utf-8'),
+            "Title": notification_title.encode('utf-8'),
             "Priority": "default"
         }
     )
