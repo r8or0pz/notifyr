@@ -1,5 +1,6 @@
 import os
 import time
+import urllib.parse
 import requests
 import google.generativeai as genai
 
@@ -48,12 +49,16 @@ for attempt in range(max_retries):
 # Send to ntfy.sh
 try:
     print(f"Sending notification to ntfy.sh/{topic}...")
+
+    google_search_url = f"https://www.google.com/search?q={urllib.parse.quote(tip_text)}"
+
     requests.post(
         f"https://ntfy.sh/{topic}",
         data=tip_text.encode('utf-8'),
         headers={
             "Title": notification_title.encode('utf-8'),
-            "Priority": "default"
+            "Priority": "default",
+            "Actions": f"view, Open Gemini, https://gemini.google.com/app; view, Google It, {google_search_url}"
         }
     )
     print("Notification sent successfully.")
