@@ -51,7 +51,7 @@ try:
         f"https://ntfy.sh/{topic}",
         data=tip_text.encode('utf-8'),
         headers={
-            "Title": "🔒 CI/CD Security Tip",
+            "Title": "🔒 CI/CD Security Tip".encode('utf-8'),
             "Priority": "default"
         }
     )
