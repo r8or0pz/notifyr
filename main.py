@@ -18,7 +18,7 @@ class Notifyr:
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
         self.model: genai.GenerativeModel = genai.GenerativeModel(os.environ['GENERATIVE_MODEL'])
         self.topic: str = os.environ["NOTIFICATION_TOPIC"]
-        self.notification_title: str = os.environ.get("NOTIFICATION_TITLE", "� DevOps/SRE Tip")
+        self.notification_title: str = os.environ.get("NOTIFICATION_TITLE", "💡 DevOps/SRE Tip")
         self.requested_tips: int = int(os.environ.get("NUMBER_OF_TIPS", 1))
         self.topics: List[str] = self.load_prompts()
 
