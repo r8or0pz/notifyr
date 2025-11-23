@@ -58,7 +58,7 @@ try:
         headers={
             "Title": notification_title.encode('utf-8'),
             "Priority": "default",
-            "Actions": f"view, Open Gemini, https://gemini.google.com; view, Google It, {google_search_url}"
+            "Actions": f"view, Google It, {google_search_url}"
         }
     )
     print("Notification sent successfully.")
