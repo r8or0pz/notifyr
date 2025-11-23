@@ -1,0 +1,39 @@
+Dependency Management/Supply Chain Security (e.g., hash pinning, lock file usage, vulnerability scanning tools).
+Niche Kubernetes features (e.g., Pod disruption budgets, ephemeral containers for debugging), scaling, security, networking.
+Advanced Bash/Zsh scripting (e.g., process substitution, complex pipeline tricks and so on).
+Infrastructure as Code (IaC) principles (e.g., Terraform module composition, drift detection).
+Hidden features or performance tuning in Docker/containerd (e.g., buildx, rootless mode, or overlayfs specifics).
+Linux networking internals and troubleshooting (e.g., tcpdump, ss, conntrack, eBPF).
+Database reliability engineering (e.g., replication lag, connection pooling, vacuuming).
+Observability signals (logs, metrics, traces) and alert fatigue management.
+Cloud provider hidden limits and quotas (AWS).
+Secret management and rotation strategies in production.
+Git advanced usage (e.g., bisect, reflog, worktrees, submodules).
+CI/CD pipeline optimization (e.g., caching strategies, parallel execution, artifact management).
+Service Mesh patterns and anti-patterns (e.g., Istio, Linkerd, sidecar vs sidecarless).
+Chaos Engineering principles and tools (e.g., Gremlin, Chaos Mesh).
+Site Reliability Engineering (SRE) concepts (e.g., SLIs, SLOs, SLAs, error budgets).
+Zero Trust Security architecture implementation.
+Cost optimization in cloud environments (e.g., spot instances, reserved instances, savings plans).
+Serverless architecture best practices and pitfalls (e.g., cold starts, concurrency limits).
+Distributed tracing and debugging microservices.
+API Gateway patterns and rate limiting strategies.
+Structured logging best practices (JSON format, correlation IDs, context propagation).
+Log aggregation and shipping performance (e.g., Vector vs Fluentd vs Fluent-bit, buffer tuning).
+Linux kernel tuning and system internals (e.g., cgroups v2, namespaces, systemd units, memory management).
+Zero-downtime database migration strategies (e.g., expand-contract pattern, online schema changes).
+Web server and Load Balancer advanced tuning (Nginx/HAProxy/Traefik caching, compression, TLS optimization).
+DevSecOps integration (SAST/DAST in pipelines, container signing with Cosign, SBOM generation).
+Modern networking protocols (HTTP/3 & QUIC, gRPC, WebSocket performance).
+Incident management best practices (blameless post-mortems, runbook automation).
+Platform Engineering concepts (Internal Developer Platforms, self-service models, Backstage).
+Advanced Go (Golang) patterns for systems programming (concurrency, channels, context, pprof profiling, memory model).
+Python performance optimization and packaging for DevOps (asyncio, multiprocessing, type hinting, poetry/uv, GIL workarounds).
+Writing robust CLI tools in Go and Python (Cobra, Click, signal handling, graceful shutdown patterns).
+Go vs Python for specific DevOps tasks (when to use which, performance vs development speed trade-offs).
+Advanced Regular Expressions (Regex) for log parsing and data extraction (lookaheads, lookbehinds, atomic groups, performance pitfalls).
+Kustomize advanced usage (overlays, patches, replacements, generators, and best practices for multi-environment config).
+Helm chart development best practices (library charts, subcharts, hook management, unit testing with helm-unittest).
+Helm vs Kustomize strategies (when to use which, or using them together via `helm template | kustomize`).
+Essential DevOps CLI tools mastery (jq/yq for JSON/YAML processing, k9s for K8s management, stern for logs, direnv for env vars).
+GitOps tools and patterns (ArgoCD/FluxCD troubleshooting, app-of-apps pattern, image updater strategies).
