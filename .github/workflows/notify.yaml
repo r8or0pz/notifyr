@@ -34,5 +34,6 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL }}
           NOTIFICATION_TOPIC: ${{ vars.NOTIFICATION_TOPIC }}
+          NUMBER_OF_TIPS: ${{ vars.NUMBER_OF_TIPS }}
         # uv run executes the script in the project environment
         run: uv run python main.py
