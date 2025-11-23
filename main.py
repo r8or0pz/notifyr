@@ -50,9 +50,7 @@ for attempt in range(max_retries):
 try:
     print(f"Sending notification to ntfy.sh/{topic}...")
 
-    encoded_tip = urllib.parse.quote(tip_text)
-    google_search_url = f"https://www.google.com/search?q={encoded_tip}"
-    gemini_url = f"https://gemini.google.com/app?text={encoded_tip}"
+    google_search_url = f"https://www.google.com/search?q={urllib.parse.quote(tip_text)}"
 
     requests.post(
         f"https://ntfy.sh/{topic}",
@@ -60,7 +58,7 @@ try:
         headers={
             "Title": notification_title.encode('utf-8'),
             "Priority": "default",
-            "Actions": f"view, Open Gemini, {gemini_url}; view, Google It, {google_search_url}"
+            "Actions": f"view, Open Gemini, https://gemini.google.com; view, Google It, {google_search_url}"
         }
     )
     print("Notification sent successfully.")
