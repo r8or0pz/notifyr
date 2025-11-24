@@ -11,7 +11,7 @@ Notifyr is designed to help DevOps engineers and SREs continuously learn through
 - 🤖 **AI-Powered Tips**: Uses Google Gemini to generate expert-level DevOps/SRE tips
 - 📱 **Push Notifications**: Delivers tips directly to your devices via ntfy.sh
 - 🎯 **Curated Topics**: Covers 40+ DevOps topics including Kubernetes, Infrastructure as Code, Security, Observability, and more
-- 🔄 **Automated Daily Delivery**: GitHub Actions workflow runs daily at 07:00 UTC
+- 🎲 **Random Scheduling**: Triggers throughout the day with randomized execution for unpredictable delivery times
 - 🔍 **Quick Search**: Each notification includes a "Google It" action for immediate research
 - ⚙️ **Configurable**: Customize number of tips, notification title, and topic selection
 
@@ -61,10 +61,13 @@ uv run python main.py
 
 ## GitHub Actions Automation
 
-The included workflow (`.github/workflows/notify.yaml`) automatically runs the tip generator daily:
+The included workflow (`.github/workflows/notify.yaml`) runs with randomized scheduling:
 
-- **Schedule**: Every day at 07:00 UTC
+- **Schedule**: Triggers 8 times daily durin
+- **Random Execution**: Each trigger has a 25% chance of actually running (~2 tips per day at unpredictable times)
 - **Manual Trigger**: Can be triggered manually via `workflow_dispatch`
+
+This approach ensures tips arrive at random times throughout your day, keeping the learning experience fresh and unexpected.
 
 ### Required Secrets & Variables
 
