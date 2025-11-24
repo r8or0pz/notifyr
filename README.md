@@ -4,7 +4,7 @@ A Python-based tool that generates daily DevOps/SRE tips using Google's Gemini A
 
 ## What It Does
 
-**notifyr** randomly selects topics from a curated list of 40 DevOps/SRE areas (ranging from Kubernetes and Infrastructure as Code to advanced Python optimization and GitOps patterns), generates expert-level tips using Google's Gemini AI, and sends them as push notifications to your devices through ntfy.sh.
+**notifyr** randomly selects topics from a curated list of 39 DevOps/SRE areas (ranging from Kubernetes and Infrastructure as Code to advanced Python optimization and GitOps patterns), generates expert-level tips using Google's Gemini AI, and sends them as push notifications to your devices through ntfy.sh.
 
 Each tip is designed to be:
 - **Non-obvious**: Goes beyond basic knowledge
@@ -13,7 +13,7 @@ Each tip is designed to be:
 
 ## How It Works
 
-1. **Topic Selection**: Randomly selects topics from `prompts.txt` (40 DevOps/SRE categories)
+1. **Topic Selection**: Randomly selects topics from `prompts.txt` (39 DevOps/SRE categories)
 2. **AI Generation**: Uses Google's Gemini API to generate expert-level tips
 3. **Notification Delivery**: Sends tips to ntfy.sh with a "Google It" quick-action button
 4. **Automated Schedule**: Runs daily at 07:00 UTC via GitHub Actions
@@ -72,7 +72,7 @@ uv run python main.py
 
 ## Features
 
-- **40 DevOps/SRE Topics**: Covers dependency management, Kubernetes, IaC, Docker, networking, observability, GitOps, and more
+- **39 DevOps/SRE Topics**: Covers dependency management, Kubernetes, IaC, Docker, networking, observability, GitOps, and more
 - **Retry Logic**: Automatically retries Gemini API calls up to 3 times
 - **Quick Actions**: Each notification includes a "Google It" button for instant research
 - **Batch Support**: Generate multiple tips in a single run
